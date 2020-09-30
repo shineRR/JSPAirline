@@ -18,8 +18,8 @@
 <body>
 <header>
   <div class="register">
-    <a href="#">Register</a>
-    <a href="#">Log In</a>
+    <a href="signup.jsp">Register</a>
+    <a href="signin.jsp">Log In</a>
   </div>
 
   <div class="grid-container">
@@ -29,7 +29,6 @@
         <a href="#"> <span>Uno momento</span></a>
     </nav>
   </div>
-
 </header>
 
 <main>
