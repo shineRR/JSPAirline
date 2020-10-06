@@ -7,13 +7,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 public class GoToSignInCommand implements Command {
 
-    public GoToSignInCommand() {
-
-    }
+    private String MAIN_PAGE = "WEB-INF/jsp/main.jsp";
+    private String SIGNIN_PAGE = "WEB-INF/jsp/signin.jsp";
+    private String SIGHUP_PAGE = "WEB-INF/jsp/signup.jsp";
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

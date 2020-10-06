@@ -39,7 +39,7 @@
             <span>Email:</span><input type="email">
             <span>Password</span><input type="password">
         </div>
-        <div class="act"><a class="enterBtn" href="controller?command=goToMainPage">Enter</a></div>
+        <div class="act"><a class="enterBtn" href="controller?command=authorization">Enter</a></div>
     </div>
 </div>
 

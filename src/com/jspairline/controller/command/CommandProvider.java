@@ -13,8 +13,8 @@ public class CommandProvider {
         commands.put("goToMainPage", new GoToMainCommand());
         commands.put("goToSignInPage", new GoToSignInCommand());
         commands.put("goToSignUpPage", new GoToSignUpCommand());
-//        commands.put("registration", new RegistrationCommand());
-//        commands.put("find_book", new FindBookCommand());
+        commands.put("registration", new Registration());
+        commands.put("authorization", new Authorization());
 //        commands.put("go_to_index", new GoToIndexPageCommand());
 //        commands.put("change_locale", new ChangeLocale());
     }

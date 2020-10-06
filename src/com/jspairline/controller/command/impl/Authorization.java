@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class GoToSignUpCommand implements Command {
+public class Authorization implements Command {
 
     private String MAIN_PAGE = "WEB-INF/jsp/main.jsp";
     private String SIGNIN_PAGE = "WEB-INF/jsp/signin.jsp";
@@ -16,7 +16,7 @@ public class GoToSignUpCommand implements Command {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String page = "/WEB-INF/jsp/signup.jsp";
+        String page = MAIN_PAGE;
         RequestDispatcher requestDispatcher = request.getRequestDispatcher(page);
         requestDispatcher.forward(request, response);
     }

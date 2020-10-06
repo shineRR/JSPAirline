@@ -41,7 +41,7 @@
             <span>Number:</span><input type="text">
             <span>Password</span><input type="password">
         </div>
-        <div class="act"><a class="enterBtn" href="controller?command=goToMainPage">Get an account</a></div>
+        <div class="act"><a class="enterBtn" href="controller?command=registration">Get an account</a></div>
     </div>
 </div>
 
