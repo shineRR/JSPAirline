@@ -8,24 +8,15 @@ import java.sql.SQLException;
 
 public class SQLUserDAO implements UserDAO {
     @Override
-    public User authentification(String login, String password){
+    public User authentification(String login, String password) throws SQLException {
 
-        try {
-            throw new SQLException();
-        }catch (SQLException e) {
-//            throw new DaoException(e);
-        }
 
         return null;
     }
 
     @Override
-    public boolean registration(UserData userData) {
-        try {
-            throw new SQLException();
-        }catch (SQLException e) {
-//            throw new DaoException(e);
-        }
+    public boolean registration(UserData userData) throws SQLException {
+
 
         return false;
     }

@@ -22,7 +22,6 @@ public class CreatorFullURL {
         url = request.getRequestURL() + "?" + url;
 
         return url;
-
     }
 
 }

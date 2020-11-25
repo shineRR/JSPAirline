@@ -19,70 +19,20 @@
 </head>
 <body>
 <header>
-  <div class="register" >
-    <a href="controller?command=goToSignUpPage">Register</a>
-    <a href="controller?command=goToSignInPage">Log In</a>
+  <div class="register" align="center">
+    <h3>
+      <a href="controller?command=goToSignUpPage">Register</a>
+      &nbsp;&nbsp;&nbsp;
+      <a href="controller?command=goToSignInPage">Log In</a>
+      &nbsp;&nbsp;&nbsp;
+      <a href="controller?command=goToFlightPage">Flights</a>
+    </h3>
   </div>
 
-  <div class="grid-container">
-    <nav class="header-menu">
-        <a href="#"> <span>Tickets</span></a>
-        <a href="#"> <span>Airline</span></a>
-        <a href="#"> <span>Uno momento</span></a>
-    </nav>
-  </div>
 </header>
 
 <main>
-<%--  <div class="sidebar">--%>
-<%--    categories: <br><br>--%>
-<%--    <a href="#">Italy</a> <a href="">Belarus</a> <a href="">USA</a> <a href="">Spain</a>--%>
-<%--  </div>--%>
-<%--  <div class="main-content">--%>
-<%--    <div class="tickets">--%>
-<%--      <div class="postbox">--%>
-<%--        <div class="postcover"><img src="../../Assets/soldout.jpg" alt="" width="214" height="304"></div>--%>
-<%--        <div class="posttitle"><a href="#">Italy</a></div>--%>
-<%--      </div>--%>
-<%--      <div class="postbox">--%>
-<%--        <div class="postcover"><img src="../../Assets/soldout.jpg" alt="" width="214" height="304"></div>--%>
-<%--        <div class="posttitle"><a href="#">Spain</a></div>--%>
-<%--      </div>--%>
-<%--      <div class="postbox">--%>
-<%--        <div class="postcover"><img src="../../Assets/soldout.jpg" alt="" width="214" height="304"></div>--%>
-<%--        <div class="posttitle"><a href="#">Turkey</a></div>--%>
-<%--      </div>--%>
-<%--      <div class="postbox">--%>
-<%--        <div class="postcover"><img src="../../Assets/soldout.jpg" alt="" width="214" height="304"></div>--%>
-<%--        <div class="posttitle"><a href="#">USA</a></div>--%>
-<%--      </div>--%>
-<%--      <div class="postbox">--%>
-<%--        <div class="postcover"><img src="../../Assets/soldout.jpg" alt="" width="214" height="304"></div>--%>
-<%--        <div class="posttitle"><a href="post.html">India</a></div>--%>
-<%--      </div>--%>
-<%--      <div class="postbox">--%>
-<%--        <div class="postcover"><img src="../../Assets/soldout.jpg" alt="" width="214" height="304"></div>--%>
-<%--        <div class="posttitle"><a href="#">Japan</a></div>--%>
-<%--      </div>--%>
-<%--      <div class="postbox">--%>
-<%--        <div class="postcover"><img src="../../Assets/soldout.jpg" alt="" width="214" height="304"></div>--%>
-<%--        <div class="posttitle"><a href="#">China</a></div>--%>
-<%--      </div>--%>
-<%--      <div class="postbox">--%>
-<%--        <div class="postcover"><img src="../../Assets/soldout.jpg" alt="" width="214" height="304"></div>--%>
-<%--        <div class="posttitle"><a href="#">Belarus</a></div>--%>
-<%--      </div>--%>
-<%--    </div>--%>
-<%--  </div>--%>
 </main>
-
-
-<footer>
-  <span>Hidden</span>
-  <div class="bottom">
-    <section>GIVE ME A MOMENT</section>
-  </div>
-</footer>
 
 </body>
 </html>
