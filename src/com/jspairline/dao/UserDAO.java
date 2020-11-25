@@ -3,8 +3,10 @@ package com.jspairline.dao;
 import com.jspairline.entity.User;
 import com.jspairline.entity.UserData;
 
-public interface UserDAO {
-    User authentification (String login, String password);
+import java.sql.SQLException;
 
-    boolean registration (UserData userData);
+public interface UserDAO {
+    User authentification (String login, String password) throws SQLException;
+
+    boolean registration (UserData userData) throws SQLException;
 }

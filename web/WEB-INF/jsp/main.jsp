@@ -22,6 +22,7 @@
   <div class="register" >
     <a href="controller?command=goToSignUpPage">Register</a>
     <a href="controller?command=goToSignInPage">Log In</a>
+    <a href="controller?command=goToFlightPage">Flights</a>
   </div>
 
   <div class="grid-container">

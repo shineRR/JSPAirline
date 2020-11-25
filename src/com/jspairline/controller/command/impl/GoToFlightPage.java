@@ -4,20 +4,21 @@ import com.jspairline.controller.command.Command;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-        import javax.servlet.http.HttpServletRequest;
-        import javax.servlet.http.HttpServletResponse;
-        import java.io.IOException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
-public class GoToSignInCommand implements Command {
-
+public class GoToFlightPage implements Command {
     private static final String MAIN_PAGE = "WEB-INF/jsp/main.jsp";
     private static final String SIGNIN_PAGE = "WEB-INF/jsp/signin.jsp";
     private static final String SIGHUP_PAGE = "WEB-INF/jsp/signup.jsp";
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String page = "/WEB-INF/jsp/signin.jsp";
+        String page = "/WEB-INF/jsp/flightPage.jsp";
+//        System.out.println(request.getParameter(COMMAND));
         RequestDispatcher requestDispatcher = request.getRequestDispatcher(page);
         requestDispatcher.forward(request, response);
     }
+
 }
