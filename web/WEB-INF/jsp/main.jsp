@@ -14,12 +14,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates&display=swap" rel="stylesheet">
   <c:set var="root" value="${pageContext.request.contextPath}"/>
-  <link type="text/css" rel="stylesheet" href="http://localhost:8080/JSPAirline/web/WEB-INF/style/style.css">
+  <link type="text/css" rel="stylesheet" href="../style/style.css">
   <title>FREE TICKETS!!!</title>
 </head>
 <body>
 <header>
-  <div class="register">
+  <div class="register" >
     <a href="controller?command=goToSignUpPage">Register</a>
     <a href="controller?command=goToSignInPage">Log In</a>
   </div>

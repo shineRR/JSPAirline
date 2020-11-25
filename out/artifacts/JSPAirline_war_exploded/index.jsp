@@ -13,10 +13,7 @@
     <title>Index.jsp</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-<%--    <link rel="stylesheet" href="WEB-INF/style/style.css">--%>
-<%--    <jsp:include page="WEB-INF/cssLoader.jsp"></jsp:include>--%>
-<%--        <link rel=stylesheet type="/text/css" href="${pageContext.request.getContextPath()}/WEB-INF/style/style.css">--%>
-    <%--    <link rel="stylesheet" href="../style/style.css">--%>
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
 <%--    <header>Yes</header>--%>

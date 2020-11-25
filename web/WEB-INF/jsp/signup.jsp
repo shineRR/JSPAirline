@@ -89,12 +89,12 @@
 </main>
 
 
-<footer>
-    <span>Hidden</span>
-    <div class="bottom">
-        <section>GIVE ME A MOMENT</section>
-    </div>
-</footer>
+<%--<footer>--%>
+<%--    <span>Hidden</span>--%>
+<%--    <div class="bottom">--%>
+<%--        <section>GIVE ME A MOMENT</section>--%>
+<%--    </div>--%>
+<%--</footer>--%>
 
 </body>
 </html>

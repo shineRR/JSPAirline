@@ -15,8 +15,6 @@ public class CommandProvider {
         commands.put("goToSignUpPage", new GoToSignUpCommand());
         commands.put("registration", new Registration());
         commands.put("authorization", new Authorization());
-//        commands.put("go_to_index", new GoToIndexPageCommand());
-//        commands.put("change_locale", new ChangeLocale());
     }
 
     public Command getCommand(String commandName) {

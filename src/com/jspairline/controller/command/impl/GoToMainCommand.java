@@ -10,14 +10,14 @@ import java.io.IOException;
 
 public class GoToMainCommand implements Command {
 
-    private String MAIN_PAGE = "WEB-INF/jsp/main.jsp";
-    private String SIGNIN_PAGE = "WEB-INF/jsp/signin.jsp";
-    private String SIGHUP_PAGE = "WEB-INF/jsp/signup.jsp";
+    private static final String MAIN_PAGE = "WEB-INF/jsp/main.jsp";
+    private static final String SIGNIN_PAGE = "WEB-INF/jsp/signin.jsp";
+    private static final String SIGHUP_PAGE = "WEB-INF/jsp/signup.jsp";
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String page = "/WEB-INF/jsp/main.jsp";
-        System.out.println(request.getParameter("command"));
+//        System.out.println(request.getParameter(COMMAND));
         RequestDispatcher requestDispatcher = request.getRequestDispatcher(page);
         requestDispatcher.forward(request, response);
     }
