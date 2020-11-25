@@ -6,13 +6,25 @@
     <title>Books Store Application</title>
 </head>
 <body>
+
+<header>
+    <div class="register" align="center">
+        <h3>
+            <a href="controller?command=goToSignUpPage">Register</a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="controller?command=goToSignInPage">Log In</a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="controller?command=goToFlightPage">Flights</a>
+        </h3>
+    </div>
+</header>
+
 <div align="center">
     <h3>Flights Management</h3>
     <h4>
-        <a href="/new">Add New Flight</a>
+        <a href="controller?command=goToNewFlight">Add New Flight</a>
         &nbsp;&nbsp;&nbsp;
-        <a href="/list">List All Flights</a>
-
+        <a href="controller?command=listFlights">List All Flights</a>
     </h4>
 </div>
 <div align="center">
