@@ -12,13 +12,6 @@ public class CommandProvider {
     private Map<String, Command> commands = new HashMap<>();
 
     public CommandProvider() {
-        SQLFlightDAO sqlFlightDAO = new SQLFlightDAO("jdbc:mysql://localhost:8080/mysqljdbc", "root", "");
-        Flight flight = new Flight(1, "old", "new", "1Dec");
-        try {
-            sqlFlightDAO.insertFlight(flight);
-        } catch (SQLException e) {
-            System.out.println("1");
-        }
         commands.put("goToMainPage", new GoToMainCommand());
         commands.put("goToSignInPage", new GoToSignInCommand());
         commands.put("goToSignUpPage", new GoToSignUpCommand());
