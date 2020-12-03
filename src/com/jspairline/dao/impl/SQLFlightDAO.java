@@ -7,7 +7,6 @@ import com.mysql.jdbc.Connection;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeoutException;
 
 public class SQLFlightDAO implements FlightDAO {
 
@@ -42,7 +41,7 @@ public class SQLFlightDAO implements FlightDAO {
 
     @Override
     public boolean insertFlight(Flight flight) throws SQLException {
-        String sql = "INSERT INTO flight (src, dest, timestamp) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO PUBLIC.flight (id, srcCity, destCity, timestamp) VALUES (?, ?, ?)";
         connect();
 
         PreparedStatement statement = jdbcConnection.prepareStatement(sql);
@@ -68,9 +67,9 @@ public class SQLFlightDAO implements FlightDAO {
         ResultSet resultSet = statement.executeQuery(sql);
 
         while (resultSet.next()) {
-            int id = resultSet.getInt("flight_id");
-            String title = resultSet.getString("src");
-            String author = resultSet.getString("dest");
+            int id = resultSet.getInt("id");
+            String title = resultSet.getString("srcCity");
+            String author = resultSet.getString("destCity");
             String timestamp = resultSet.getString("timestamp");
 
             Flight book = new Flight(id, title, author, timestamp);
@@ -128,8 +127,8 @@ public class SQLFlightDAO implements FlightDAO {
         ResultSet resultSet = statement.executeQuery();
 
         if (resultSet.next()) {
-            String title = resultSet.getString("src");
-            String author = resultSet.getString("dest");
+            String title = resultSet.getString("srcCity");
+            String author = resultSet.getString("destCity");
             String timestamp = resultSet.getString("timestamp");
 
             flight = new Flight(id, title, author, timestamp);
