@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class UserData implements Serializable  {
 
-    private int id;
+    private int id = 0;
     private String login;
     private String role;
     private String surname;
@@ -14,8 +14,7 @@ public class UserData implements Serializable  {
 
     public UserData() {}
 
-    public UserData(int id, String login, String role,String password) {
-        this.id = id;
+    public UserData(String login, String role, String password) {
         this.login = login;
         this.role = role;
         this.password = password;

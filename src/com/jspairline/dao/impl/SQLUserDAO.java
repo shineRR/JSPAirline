@@ -29,16 +29,17 @@ public class SQLUserDAO implements UserDAO {
             String role = resultSet.getString("role");
             String password = resultSet.getString("password");
 
-            userData = new UserData(id, userLogin, role, password);
+            userData = new UserData(userLogin, role, password);
         }
         return userData;
     }
 
     public boolean userDataInsert(UserData userData) throws SQLException {
-        String sql = "INSERT INTO users (login, password) VALUES (?, ?)";
+        String sql = "INSERT INTO users (login, password, role) VALUES (?, ?, ?)";
         PreparedStatement statement = jdbcConnection.prepareStatement(sql);
         statement.setString(1, userData.getLogin());
         statement.setString(2, userData.getPassword());
+        statement.setString(3, userData.getRole());
         return statement.executeUpdate() > 0;
     }
 
@@ -62,6 +63,6 @@ public class SQLUserDAO implements UserDAO {
         if (userDataFromDB == null)
             state = userDataInsert(userData);
         ConnectionPool.disconnect();
-        return false;
+        return state;
     }
 }

@@ -28,16 +28,31 @@
     </div>
 </header>
 
-<div id="popup1" class="overlay">
+<div id="popup1" class="overlay" align="center">
     <div class="popup">
         <h2>login</h2>
         <a class="close" href="controller?command=goToMainPage">&times;</a>
-        <div class="content">
-            <span>Email:</span><input type="email">
-            <span>Password</span><input type="password">
-        </div>
-        &nbsp;&nbsp;&nbsp;
-        <h3> <div class="act"><a class="enterBtn" href="controller?command=authorization">Enter</a></div></h3>
+        <form action="controller?command=authorization" method="post">
+            <table border="1" cellpadding="5">
+                <tr>
+                    <th>Login: </th>
+                    <td>
+                        <input type="text" name="login" size="45" minlength="1"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Password: </th>
+                    <td>
+                        <input type="password" name="password" size="45" minlength="1"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="Create an account" />
+                    </td>
+                </tr>
+            </table>
+        </form>
     </div>
 </div>
 

@@ -13,7 +13,7 @@ public class User implements Serializable {
 
     public User() {}
 
-    public User(int id, String login, String rolel) {
+    public User(int id, String login, String role) {
         this.id = id;
         this.login = login;
         this.role = role;
