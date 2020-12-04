@@ -2,7 +2,6 @@ package com.jspairline.dao.impl;
 
 import com.jspairline.dao.ConnectionPool;
 import com.jspairline.dao.UserDAO;
-import com.jspairline.entity.Flight;
 import com.jspairline.entity.User;
 import com.jspairline.entity.UserData;
 
@@ -27,9 +26,10 @@ public class SQLUserDAO implements UserDAO {
         if (resultSet.next()) {
             int id = resultSet.getInt("id");
             String userLogin = resultSet.getString("login");
+            String role = resultSet.getString("role");
             String password = resultSet.getString("password");
 
-            userData = new UserData(id, userLogin, "", "", "", password);
+            userData = new UserData(id, userLogin, role, password);
         }
         return userData;
     }
@@ -48,7 +48,7 @@ public class SQLUserDAO implements UserDAO {
         UserData userData = userDataSelect(login);
         User user = null;
         if (userData != null && password.equalsIgnoreCase(userData.getPassword())) {
-            user = new User(userData.getId(), userData.getLogin(), userData.getName(), userData.getSurname(), userData.getEmail());
+            user = new User(userData.getId(), userData.getLogin(), userData.getRole());
         }
         ConnectionPool.disconnect();
         return user;

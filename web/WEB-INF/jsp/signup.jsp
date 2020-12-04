@@ -33,14 +33,60 @@
     <div class="popup">
         <h2>Register</h2>
         <a class="close" href="controller?command=goToMainPage">&times;</a>
-        <div class="content">
-            <span>Email:</span><input type="email">
-            <span>Name:</span><input type="text">
-            <span>Number:</span><input type="text">
-            <span>Password</span><input type="password">
-        </div>
-        &nbsp;&nbsp;&nbsp;
-        <h3><div class="act"><a class="enterBtn" href="controller?command=registration">Get an account</a></div></h3>
+        <form action="controller?command=new/insert" method="post">
+            <table border="1" cellpadding="5">
+                <caption>
+                    <h2>
+                        <c:if test="${flight != null}">
+                            Edit Flight
+                        </c:if>
+                        <c:if test="${flight == null}">
+                            Add New Flight
+                        </c:if>
+                    </h2>
+                </caption>
+                <c:if test="${flight != null}">
+                    <input type="hidden" name="id" value="<c:out value='${flight.id}' />" />
+                </c:if>
+                <tr>
+                    <th>Src City: </th>
+                    <td>
+                        <input type="text" name="src" size="45"
+                               value="<c:out value='${flight.src}' />"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <th>Login: </th>
+                    <td>
+                        <input type="text" name="dest" size="45"
+                               value="<c:out value='${flight.dest}' />"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <th>Oassword: </th>
+                    <td>
+                        <input type="text" name="timestamp" size="45"
+                               value="<c:out value='${user.timestamp}' />"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="Create an account" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+<%--        <div class="content">--%>
+<%--            <span>Email:</span><input type="email">--%>
+<%--            <span>Name:</span><input type="text">--%>
+<%--            <span>Number:</span><input type="text">--%>
+<%--            <span>Password</span><input type="password">--%>
+<%--        </div>--%>
+<%--        &nbsp;&nbsp;&nbsp;--%>
+<%--        <h3><div class="act"><a class="enterBtn" href="controller?command=registration">Get an account</a></div></h3>--%>
     </div>
 </div>
 

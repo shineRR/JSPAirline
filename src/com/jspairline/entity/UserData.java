@@ -7,19 +7,17 @@ public class UserData implements Serializable  {
 
     private int id;
     private String login;
-    private String name;
+    private String role;
     private String surname;
     private String email;
     private String password;
 
     public UserData() {}
 
-    public UserData(int id, String login, String name, String surname, String email, String password) {
+    public UserData(int id, String login, String role,String password) {
         this.id = id;
         this.login = login;
-        this.name = name;
-        this.surname = surname;
-        this.email = email;
+        this.role = role;
         this.password = password;
     }
 
@@ -39,28 +37,12 @@ public class UserData implements Serializable  {
         this.login = login;
     }
 
-    public String getName() {
-        return name;
+    public String getRole() {
+        return role;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public String getPassword() {
@@ -78,24 +60,20 @@ public class UserData implements Serializable  {
         UserData userData = (UserData) o;
         return id == userData.id &&
                 Objects.equals(login, userData.login) &&
-                Objects.equals(name, userData.name) &&
-                Objects.equals(surname, userData.surname) &&
-                Objects.equals(email, userData.email) &&
+                Objects.equals(role, userData.role) &&
                 Objects.equals(password, userData.password);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, login, name, surname, email, password);
+        return Objects.hash(id, login, role, password);
     }
 
     @Override
     public String toString() {
         return "UserData[id=" + id +
                 ", login='" + login + '\'' +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", email='" + email + '\'' +
+                ", name='" + role + '\'' +
                 ", password='" + password + '\'' +
                 ']';
     }

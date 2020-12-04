@@ -7,18 +7,16 @@ public class User implements Serializable {
 
     private int id;
     private String login;
-    private String name;
+    private String role;
     private String surname;
     private String email;
 
     public User() {}
 
-    public User(int id, String login, String name, String surname, String email) {
+    public User(int id, String login, String rolel) {
         this.id = id;
         this.login = login;
-        this.name = name;
-        this.surname = surname;
-        this.email = email;
+        this.role = role;
     }
 
     public int getId() {
@@ -37,28 +35,12 @@ public class User implements Serializable {
         this.login = login;
     }
 
-    public String getName() {
-        return name;
+    public String getRole() {
+        return role;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setRole(String role) {
+        this.role = role;
     }
 
     @Override
@@ -68,23 +50,19 @@ public class User implements Serializable {
         User user = (User) o;
         return id == user.id &&
                 Objects.equals(login, user.login) &&
-                Objects.equals(name, user.name) &&
-                Objects.equals(surname, user.surname) &&
-                Objects.equals(email, user.email);
+                Objects.equals(role, user.role);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, login, name, surname, email);
+        return Objects.hash(id, login, role);
     }
 
     @Override
     public String toString() {
         return "User[id=" + id +
                 ", login='" + login + '\'' +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", email='" + email + '\'' +
+                ", name='" + role + '\'' +
                 ']';
     }
 }

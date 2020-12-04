@@ -17,11 +17,9 @@ public class Controller extends HttpServlet {
 
     private final CommandProvider provider = new CommandProvider();
 
-
     public Controller() {
         super();
     }
-
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String commandName = request.getParameter(PARAMETER_COMMAND);
