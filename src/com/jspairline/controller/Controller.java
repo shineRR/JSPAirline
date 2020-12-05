@@ -24,12 +24,10 @@ public class Controller extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String commandName = request.getParameter(PARAMETER_COMMAND);
         Command command = provider.getCommand(commandName);
-
         command.execute(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("2");
         doGet(request, response);
     }
 }

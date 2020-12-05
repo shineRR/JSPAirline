@@ -3,6 +3,7 @@ package com.jspairline.controller.command.impl;
 import com.jspairline.controller.command.Command;
 import com.jspairline.dao.impl.SQLUserDAO;
 import com.jspairline.entity.User;
+import com.jspairline.service.StringHelper;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,6 +18,7 @@ public class Authorization implements Command {
 
     private static final String MAIN_PAGE = "WEB-INF/jsp/main.jsp";
     private static final String SIGNIN_PAGE = "WEB-INF/jsp/signin.jsp";
+    private static final String FLIGHT_PAGE = "WEB-INF/jsp/flightPage.jsp";
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

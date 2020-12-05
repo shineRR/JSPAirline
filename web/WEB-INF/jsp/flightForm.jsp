@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>Flight Application</title>
+    <title>JSPAirline - Flight Form</title>
 </head>
 <body>
     <header>
@@ -22,43 +22,38 @@
         <h3>Flights Management</h3>
         <h4>
             <a href="controller?command=goToNewFlight">Add New Flight</a>
-            &nbsp;&nbsp;&nbsp;
-            <a href="controller?command=goToFlightPage">List All Flights</a>
 
         </h4>
     </div>
 
     <div align="center">
+            <c:if test="${flight != null}">
+                <form action="controller?command=goToNewFlight?id=<c:out value='${flight.id}?method=update'/>" method="post">
+                </c:if>
             <c:if test="${flight == null}">
-            <form action="controller?command=goToNewFlight" method="post">
+                <form action="controller?command=goToNewFlight" method="post">
                 </c:if>
                 <table border="1" cellpadding="5">
-                    <caption>
-                        <h2>
-                            <c:if test="${flight != null}">
-                                Edit Flight
-                            </c:if>
-                            <c:if test="${flight == null}">
-                                Add New Flight
-                            </c:if>
-                        </h2>
-                    </caption>
                     <tr>
                         <th>Src City: </th>
                         <td>
-                            <input type="text" name="src" size="45"/>
+                            <input type="text" name="src" size="45"
+                                   value="<c:out value='${flight.src}' />"
+                            />
                         </td>
                     </tr>
                     <tr>
                         <th>Dest City: </th>
                         <td>
-                            <input type="text" name="dest" size="45"/>
+                            <input type="text" name="dest" size="45"
+                                   value="<c:out value='${flight.dest}' />"
                         </td>
                     </tr>
                     <tr>
                         <th>Timestamp: </th>
                         <td>
-                            <input type="text" name="timestamp" size="45"/>
+                            <input type="text" name="timestamp" size="45"
+                                   value="<c:out value='${flight.timestamp}' />"
                         </td>
                     </tr>
                     <tr>

@@ -3,28 +3,28 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="en">
 <head>
-    <title>Books Store Application</title>
+    <title>JSPAirline - Flights Page</title>
 </head>
 <body>
 
 <header>
-    <div class="register" align="center">
-        <h3>
-            <a href="controller?command=goToSignUpPage">Register</a>
-            &nbsp;&nbsp;&nbsp;
-            <a href="controller?command=goToSignInPage">Log In</a>
-            &nbsp;&nbsp;&nbsp;
-            <a href="controller?command=goToFlightPage">Flights</a>
-        </h3>
-    </div>
+<%--    <c:if test='(request.getAttribute("role") != null)'>--%>
+        <div class="register" align="center">
+            <h3>
+                <a href="controller?command=goToSignUpPage">Register</a>
+                &nbsp;&nbsp;&nbsp;
+                <a href="controller?command=goToSignInPage">Log In</a>
+                &nbsp;&nbsp;&nbsp;
+                <a href="controller?command=goToFlightPage">Flights</a>
+            </h3>
+        </div>
+<%--    </c:if>>--%>
 </header>
 
 <div align="center">
     <h3>Flights Management</h3>
     <h4>
         <a href="controller?command=goToNewFlight">Add New Flight</a>
-        &nbsp;&nbsp;&nbsp;
-        <a href="controller?command=listFlights">List All Flights</a>
     </h4>
 </div>
 <div align="center">
@@ -43,9 +43,9 @@
                 <td><c:out value="${flight.dest}" /></td>
                 <td><c:out value="${flight.timestamp}" /></td>
                 <td>
-                    <a href="/edit?id=<c:out value='${flight.id}' />">Edit</a>
+                    <a href="controller?command=goToNewFlight?id=<c:out value='${flight.id}?method=edit' />">Edit</a>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="/delete?id=<c:out value='${flight.id}' />">Delete</a>
+                    <a href="controller?command=goToNewFlight?id=<c:out value='${flight.id}?method=delete' />">Delete</a>
                 </td>
             </tr>
         </c:forEach>

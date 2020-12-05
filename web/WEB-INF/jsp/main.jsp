@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates&display=swap" rel="stylesheet">
   <c:set var="root" value="${pageContext.request.contextPath}"/>
   <link type="text/css" rel="stylesheet" href="../style/style.css">
-  <title>FREE TICKETS!!!</title>
+  <title>JSPAirline - Main</title>
 </head>
 <body>
 <header>

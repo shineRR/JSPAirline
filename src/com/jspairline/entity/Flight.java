@@ -17,9 +17,17 @@ public class Flight implements Serializable {
 
     public int getId() { return id; }
 
+    public void setId(int id) { this.id = id; }
+
     public String getSrc() { return src; }
+
+    public void setSrc(String src) { this.src = src; }
 
     public String getDest() { return dest; }
 
+    public void setDest(String dest) { this.dest = dest; }
+
     public String getTimestamp() { return timestamp; }
+
+    public void setTimestamp(String timestamp) { this.timestamp = timestamp; }
 }

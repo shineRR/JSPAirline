@@ -71,18 +71,19 @@ public class SQLFlightDAO implements FlightDAO {
     @Override
     public boolean updateFlight(Flight flight) throws SQLException {
         String sql = "UPDATE flights SET src = ?, dest = ?, timestamp = ?";
-        sql += " WHERE flight_id = ?";
+        sql += " WHERE id = ?";
         jdbcConnection = ConnectionPool.connect();
 
         PreparedStatement statement = jdbcConnection.prepareStatement(sql);
         statement.setString(1, flight.getSrc());
         statement.setString(2, flight.getDest());
-        statement.setFloat(3, 123);
+        statement.setString(3, flight.getTimestamp());
         statement.setInt(4, flight.getId());
 
         boolean rowUpdated = statement.executeUpdate() > 0;
         statement.close();
         ConnectionPool.disconnect();
+        System.out.println(rowUpdated);
         return rowUpdated;
     }
     @Override
@@ -98,11 +99,12 @@ public class SQLFlightDAO implements FlightDAO {
         ResultSet resultSet = statement.executeQuery();
 
         if (resultSet.next()) {
-            String title = resultSet.getString("srcCity");
-            String author = resultSet.getString("destCity");
+            int flight_id = resultSet.getInt("id");
+            String title = resultSet.getString("src");
+            String author = resultSet.getString("dest");
             String timestamp = resultSet.getString("timestamp");
 
-            flight = new Flight(id, title, author, timestamp);
+            flight = new Flight(flight_id, title, author, timestamp);
         }
 
         resultSet.close();

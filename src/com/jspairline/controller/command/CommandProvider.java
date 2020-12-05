@@ -3,6 +3,7 @@ package com.jspairline.controller.command;
 import com.jspairline.controller.command.impl.*;
 import com.jspairline.dao.impl.SQLFlightDAO;
 import com.jspairline.entity.Flight;
+import com.jspairline.service.StringHelper;
 
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -18,14 +19,12 @@ public class CommandProvider {
         commands.put("goToFlightPage", new GoToFlightPage());
         commands.put("goToNewFlight", new GoToNewFlight());
         commands.put("listFlights", new GoToListFlights());
-//        commands.put("updateFlight", );
-//        commands.put("listFlights", );
         commands.put("registration", new Registration());
         commands.put("authorization", new Authorization());
     }
 
 
     public Command getCommand(String commandName) {
-        return commands.get(commandName);
+        return commands.get(StringHelper.getDefaultCommandName(commandName));
     }
 }
