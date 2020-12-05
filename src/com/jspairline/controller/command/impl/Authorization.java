@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 public class Authorization implements Command {
 
@@ -28,12 +29,14 @@ public class Authorization implements Command {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+        HttpSession session = request.getSession();
         if (user != null) {
-            HttpSession session = request.getSession();
-            session.setAttribute("login", login);
+            session.setAttribute("role", user.getRole());
             RequestDispatcher requestDispatcher = request.getRequestDispatcher(MAIN_PAGE);
             requestDispatcher.forward(request, response);
         } else {
+            session.invalidate();
+            request.setAttribute("error", "Invalid login or password");
             RequestDispatcher requestDispatcher = request.getRequestDispatcher(SIGNIN_PAGE);
             requestDispatcher.forward(request, response);
         }

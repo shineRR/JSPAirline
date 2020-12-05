@@ -29,11 +29,8 @@
     </div>
 
     <div align="center">
-        <c:if test="${flight != null}">
-        <form action="controller?command=updateFlight" method="post">
-            </c:if>
             <c:if test="${flight == null}">
-            <form action="controller?command=new/insert" method="post">
+            <form action="controller?command=goToNewFlight" method="post">
                 </c:if>
                 <table border="1" cellpadding="5">
                     <caption>
@@ -46,31 +43,22 @@
                             </c:if>
                         </h2>
                     </caption>
-                    <c:if test="${flight != null}">
-                        <input type="hidden" name="id" value="<c:out value='${flight.id}' />" />
-                    </c:if>
                     <tr>
                         <th>Src City: </th>
                         <td>
-                            <input type="text" name="src" size="45"
-                                   value="<c:out value='${flight.src}' />"
-                            />
+                            <input type="text" name="src" size="45"/>
                         </td>
                     </tr>
                     <tr>
                         <th>Dest City: </th>
                         <td>
-                            <input type="text" name="dest" size="45"
-                                   value="<c:out value='${flight.dest}' />"
-                            />
+                            <input type="text" name="dest" size="45"/>
                         </td>
                     </tr>
                     <tr>
                         <th>Timestamp: </th>
                         <td>
-                            <input type="text" name="timestamp" size="45"
-                                   value="<c:out value='${flight.timestamp}' />"
-                            />
+                            <input type="text" name="timestamp" size="45"/>
                         </td>
                     </tr>
                     <tr>
@@ -80,6 +68,12 @@
                     </tr>
                 </table>
             </form>
+                <%
+                    if(request.getAttribute("error") != null)
+                    {
+                        out.println(request.getAttribute("error"));
+                    }
+                %>
     </div>
 </body>
 </html>

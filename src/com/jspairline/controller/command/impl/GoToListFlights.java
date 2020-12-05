@@ -11,7 +11,7 @@ import java.io.IOException;
 public class GoToListFlights implements Command {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String page = "/WEB-INF/jsp/***.jsp";
+        String page = "/WEB-INF/jsp/flightPage.jsp";
         RequestDispatcher requestDispatcher = request.getRequestDispatcher(page);
         requestDispatcher.forward(request, response);
     }

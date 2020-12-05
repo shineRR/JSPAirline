@@ -65,6 +65,12 @@
             </table>
         </form>
     </div>
+    <%
+        if(request.getAttribute("error") != null)
+        {
+            out.println(request.getAttribute("error"));
+        }
+    %>
 </div>
 
 <main>

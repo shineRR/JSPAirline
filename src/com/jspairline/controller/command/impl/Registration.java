@@ -4,8 +4,12 @@ import com.jspairline.controller.command.Command;
 import com.jspairline.dao.impl.SQLUserDAO;
 import com.jspairline.entity.UserData;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class Registration implements Command {
@@ -15,7 +19,7 @@ public class Registration implements Command {
     private static final String SIGHUP_PAGE = "WEB-INF/jsp/signup.jsp";
 
     @Override
-    public void execute(HttpServletRequest request, HttpServletResponse response) {
+    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         SQLUserDAO sqlUserDAO = new SQLUserDAO();
         String login = request.getParameter("login");
         String password = request.getParameter("password");
@@ -27,6 +31,10 @@ public class Registration implements Command {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        System.out.println(result);
+        HttpSession session = request.getSession();
+        session.invalidate();
+        request.setAttribute("error", result ? "Done" : "Invalid login or password");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher(SIGHUP_PAGE);
+        requestDispatcher.forward(request, response);
     }
 }

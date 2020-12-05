@@ -4,11 +4,14 @@ import com.jspairline.dao.ConnectionPool;
 import com.jspairline.dao.UserDAO;
 import com.jspairline.entity.User;
 import com.jspairline.entity.UserData;
+import com.jspairline.service.StringHelper;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SQLUserDAO implements UserDAO {
     Connection jdbcConnection;
@@ -46,9 +49,12 @@ public class SQLUserDAO implements UserDAO {
     @Override
     public User authentification(String login, String password) throws SQLException {
         jdbcConnection = ConnectionPool.connect();
+        ArrayList<String> arrayList = new ArrayList<String>();
+        arrayList.add(login);
+        arrayList.add(password);
         UserData userData = userDataSelect(login);
         User user = null;
-        if (userData != null && password.equalsIgnoreCase(userData.getPassword())) {
+        if (userData != null && password.equalsIgnoreCase(userData.getPassword()) && StringHelper.validateFileds(arrayList)) {
             user = new User(userData.getId(), userData.getLogin(), userData.getRole());
         }
         ConnectionPool.disconnect();
@@ -59,6 +65,11 @@ public class SQLUserDAO implements UserDAO {
     public boolean registration(UserData userData) throws SQLException {
         boolean state = false;
         jdbcConnection = ConnectionPool.connect();
+        ArrayList<String> arrayList = new ArrayList<String>();
+        arrayList.add(userData.getLogin());
+        arrayList.add(userData.getPassword());
+        if (!StringHelper.validateFileds(arrayList))
+            return false;
         UserData userDataFromDB = userDataSelect(userData.getLogin());
         if (userDataFromDB == null)
             state = userDataInsert(userData);

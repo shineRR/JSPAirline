@@ -6,6 +6,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class GoToMainCommand implements Command {
@@ -16,9 +17,7 @@ public class GoToMainCommand implements Command {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String page = "/WEB-INF/jsp/main.jsp";
-//        System.out.println(request.getParameter(COMMAND));
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher(page);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher(MAIN_PAGE);
         requestDispatcher.forward(request, response);
     }
 }
